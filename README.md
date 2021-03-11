@@ -69,9 +69,32 @@ I then wrote an if statement within the existing for loop that checks if the cou
     county_votes[county_name] += 1
     
 ```
+I wrote another for loop which gets the county from the county dictionary. This loop retrieves the county vote count and calculates the percentage of votes for the county. I then print the results.
+
+```
+for key in county_votes:
+
+    vote_count = county_votes[key]
+    
+    vote_pcent = float(vote_count) / float(total_votes) * 100
+        
+    county_results = (
+        f"{key}: {vote_pcent:.1f}% ({vote_count:,})\n")
+    print(county_results)
+
+```
+
 Using this code, we find the number and percentage of total votes for each county to be:
  - Jefferson: 10.5% (38,855)
  - Denver: 82.8% (306,055)
  - Arapahoe: 6.7% (24,801)
 
+### County with the Largest Number of Votes
+In the same for loop as above, I wrote an if statement that determined the winning county and get its vote count.
+
+```
+    if (vote_count > county_largest_votes):
+        county_largest_votes = vote_count
+        county_largest_turnout = key
+```
 

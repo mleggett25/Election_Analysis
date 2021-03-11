@@ -20,7 +20,7 @@ To calculate the total number of votes cast, I first initialized a total vote co
 total_votes = 0
 ```
 
-I then read the csv file with the election data and converted it into a list of dictionaries. I created a for loop for each row in the csv file and created a variable total_votes that added to the total vote count.
+I then read the csv file with the election data and converted it into a list of dictionaries. I created a for loop for each row in the csv file which added a vote to the total vote count variable, total_votes.
 
 ```
 with open(file_to_load) as election_data:

@@ -36,3 +36,37 @@ with open(file_to_load) as election_data:
 Using this code, we find the total number of votes cast to be 369,711.
 
 ### Number of Votes and Percentage of Total Votes for Each County
+To provide a breakdown of the number of votes and the percentage of total votes for each county, I first created a list for the counties and a dictionary for the county votes.
+```
+county_list = []
+county_votes = {}
+```
+
+In the same script that was used to calcuate the total votes, I initialized a variable to get the county name from each row.
+
+```
+with open(file_to_load) as election_data:
+    reader = csv.reader(election_data)
+
+    header = next(reader)
+
+    for row in reader:
+
+        total_votes = total_votes + 1
+        
+        county_name = row[1]
+```
+
+I then wrote an if statement within the existing for loop that checks if the county matches any existing county in the county list. If the county is not in the county list, it is added to the list of counties and begins tracking and adding to the counties vote count.
+
+```
+    if county_name not in county_list:
+        
+        county_list.append(county_name)
+        
+        county_votes[county_name] = 0
+        
+    county_votes[county_name] += 1
+    
+```
+

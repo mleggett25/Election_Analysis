@@ -20,7 +20,7 @@ To calculate the total number of votes cast, I first initialized a total vote co
 total_votes = 0
 ```
 
-I then read the csv file with the election data and converted it into a list of dictionaries. I created a for loop for each row in the csv file which added a vote to the total vote count variable, total_votes.
+I read the csv file with the election data and converted it into a list of dictionaries. I created a for loop for each row in the csv file which added a vote to the total vote count variable, total_votes. I then printed the results.
 
 ```
 with open(file_to_load) as election_data:
@@ -31,6 +31,16 @@ with open(file_to_load) as election_data:
     for row in reader:
 
         total_votes = total_votes + 1
+        
+election_results = (
+    f"\nElection Results\n"
+    f"-------------------------\n"
+    f"Total Votes: {total_votes:,}\n"
+    f"-------------------------\n"
+    f"\nCounty Votes:\n")
+print(election_results, end="")
+        
+
 ```
 
 Using this code, we find the total number of votes cast to be 369,711.
@@ -93,6 +103,16 @@ Using this code, we find the number and percentage of total votes for each count
 In the same for loop as above, I wrote an if statement that determined the winning county and get its vote count.
 
 ```
+for key in county_votes:
+
+    vote_count = county_votes[key]
+    
+    vote_pcent = float(vote_count) / float(total_votes) * 100
+        
+    county_results = (
+        f"{key}: {vote_pcent:.1f}% ({vote_count:,})\n")
+    print(county_results)
+    
     if (vote_count > county_largest_votes):
         county_largest_votes = vote_count
         county_largest_turnout = key

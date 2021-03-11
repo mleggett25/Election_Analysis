@@ -15,10 +15,13 @@ The purpose of this election analysis audit was to complete the following tasks 
 
 ### Total Number of Votes Cast
 To calculate the total number of votes cast, I first initialized a total vote counter.
+
 ``
 total_votes = 0
 ``
+
 I then read the csv file with the election data and converted it into a list of dictionaries. I created a for loop for each row in the csv file and created a variable total_votes that added to the total vote count.
+
 ``
 with open(file_to_load) as election_data:
     reader = csv.reader(election_data)
@@ -29,6 +32,7 @@ with open(file_to_load) as election_data:
 
         total_votes = total_votes + 1
 ``
+
 Using this code, we find the total number of votes cast to be 369,711.
 
 ### Number of Votes and Percentage of Total Votes for Each County

@@ -69,4 +69,9 @@ I then wrote an if statement within the existing for loop that checks if the cou
     county_votes[county_name] += 1
     
 ```
+Using this code, we find the number and percentage of total votes for each county to be:
+ - Jefferson: 10.5% (38,855)
+ - Denver: 82.8% (306,055)
+ - Arapahoe: 6.7% (24,801)
+
 

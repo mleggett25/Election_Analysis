@@ -39,11 +39,9 @@ election_results = (
     f"-------------------------\n"
     f"\nCounty Votes:\n")
 print(election_results, end="")
-        
-
 ```
 
-Using this code, we find the total number of votes cast to be 369,711.
+We find the total number of votes cast to be 369,711.
 
 ### Number of Votes and Percentage of Total Votes for Each County
 To provide a breakdown of the number of votes and the percentage of total votes for each county, I first created a list for the counties and a dictionary for the county votes.
@@ -77,7 +75,6 @@ I then wrote an if statement within the existing for loop that checks if the cou
         county_votes[county_name] = 0
         
     county_votes[county_name] += 1
-    
 ```
 I wrote another for loop which gets the county from the county dictionary. This loop retrieves the county vote count and calculates the percentage of votes for the county. I then printed the results.
 
@@ -91,16 +88,15 @@ for key in county_votes:
     county_results = (
         f"{key}: {vote_pcent:.1f}% ({vote_count:,})\n")
     print(county_results)
-
 ```
 
-Using this code, we find the number and percentage of total votes for each county to be:
+We find the number and percentage of total votes for each county to be:
  - Jefferson: 10.5% (38,855)
  - Denver: 82.8% (306,055)
  - Arapahoe: 6.7% (24,801)
 
 ### County with the Largest Number of Votes
-In the same for loop as above, I wrote an if statement that determined the winning county and get its vote count and then printed the results.
+In the same for loop as above, I wrote an if statement that determined the county with the largest number of votes and then printed the results.
 
 ```
 for key in county_votes:
@@ -124,4 +120,4 @@ county_turnout_summary = (
 )
 print(county_turnout_summary)
 ```
-
+We find the county that Denver is the county with the largest number of votes.

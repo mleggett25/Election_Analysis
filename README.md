@@ -45,6 +45,7 @@ We find the total number of votes cast to be 369,711.
 
 ### Number of Votes and Percentage of Total Votes for Each County
 To provide a breakdown of the number of votes and the percentage of total votes for each county, I first created a list for the counties and a dictionary for the county votes.
+
 ```
 county_list = []
 county_votes = {}
@@ -76,6 +77,7 @@ I then wrote an if statement within the existing for loop that checks if the cou
         
     county_votes[county_name] += 1
 ```
+
 I wrote another for loop which gets the county from the county dictionary. This loop retrieves the county vote count and calculates the percentage of votes for the county. I then printed the results.
 
 ```
@@ -120,4 +122,8 @@ county_turnout_summary = (
 )
 print(county_turnout_summary)
 ```
+
 We find the county that Denver is the county with the largest number of votes.
+
+### Number of Votes and Percentage of Total Votes for Each Candidate
+

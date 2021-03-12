@@ -126,4 +126,32 @@ print(county_turnout_summary)
 We find the county that Denver is the county with the largest number of votes.
 
 ### Number of Votes and Percentage of Total Votes for Each Candidate
+To provide a breakdown of the number of votes and percentage of total votes for each candidate, I first created a list for the candidate options and a dictionary for the candidate votes.
+
+```
+candidate_options = []
+candidate_votes = {}
+```
+
+Within the for loop I created to loop through each row in the csv file, the loop extracted the candidate name from each row. I created an if statement that checks if the candidate name matches any existing candidate name in the candidate options list. If the candidate is not in the candidate options list, it is added to the list and begins tracking and adding to the candidates vote count.
+
+```
+with open(file_to_load) as election_data:
+    reader = csv.reader(election_data)
+
+    header = next(reader)
+
+    for row in reader:
+
+        candidate_name = row[2]
+
+        if candidate_name not in candidate_options:
+
+            candidate_options.append(candidate_name)
+
+            candidate_votes[candidate_name] = 0
+
+        candidate_votes[candidate_name] += 1
+```
+
 

@@ -198,3 +198,5 @@ print(winning_candidate_summary)
 ```
 
 We find that the winner of the election was Diana DeGette with 272,892 votes (73.8% of the total vote).
+
+## Election Audit Summary

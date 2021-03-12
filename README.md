@@ -154,4 +154,21 @@ with open(file_to_load) as election_data:
         candidate_votes[candidate_name] += 1
 ```
 
+I then wrote another for loop which gets the candidate name from the candidate dictionary. This loop retrieves the candidate vote count and calculates the percentage of votes for the candidate. I then printed the results.
+
+```
+for candidate_name in candidate_votes:
+
+    votes = candidate_votes.get(candidate_name)
+    vote_percentage = float(votes) / float(total_votes) * 100
+    candidate_results = (
+        f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+
+    print(candidate_results)
+```
+We find the number and total percentage for each candidate to be:
+- Charles Casper Stockham: 23.0% (85,213)
+- Diana DeGette: 73.8% (272,892)
+- Raymon Anthony Doane: 3.1% (11,606)
+
 

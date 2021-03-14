@@ -51,7 +51,7 @@ county_list = []
 county_votes = {}
 ```
 
-In the same script that was used to calcuate the total votes, I initialized a variable to get the county name from each row.
+In the same script that was used to calculate the total votes, I initialized a variable to get the county name from each row.
 
 ```
 with open(file_to_load) as election_data:
@@ -123,7 +123,7 @@ county_turnout_summary = (
 print(county_turnout_summary)
 ```
 
-We find the county that Denver is the county with the largest number of votes.
+We find that Denver is the county with the largest number of votes.
 
 ### Number of Votes and Percentage of Total Votes for Each Candidate
 To provide a breakdown of the number of votes and percentage of total votes for each candidate, I first created a list for the candidate options and a dictionary for the candidate votes.
@@ -229,7 +229,7 @@ Source: https://stackoverflow.com/a/53190147/15171602
 
 We would then set the existing file_to_load variable equal to the new election_results_all.csv file.
 
-Another way to modify the script is to create a dialog box that asks the user if they want to write the election results into the election_analysis.txt file. This could be useful in preventing unwanted overwriting of the txt file while working with and running the code. The code would look like this:
+Another way to modify the script is to use the input function to ask the user if they want to write the election results to the election_analysis.txt file. This could be useful in preventing unwanted overwriting of the txt file while working with and running the code. The code would look like this:
 
 ```
 write_results = input("Would you like to write the results to the election_analysis.txt file?")

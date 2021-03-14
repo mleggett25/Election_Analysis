@@ -223,6 +223,13 @@ for csvfile in csvfiles:
 result = pd.concat(dataframes, ignore_index=True)
 
 # Print out to a new csv file
-result.to_csv('all.csv')
+result.to_csv('election_results_all.csv')
 ```
 Source: https://stackoverflow.com/a/53190147/15171602
+
+We would then set the existing file_to_load variable equal to the new election_results_all.csv file.
+
+Another way to modify the script is to create a dialog box that asks the user if they want to write the election results into the election_analysis.txt file. This could be useful in preventing unwanted overwriting of the txt file while working with and running the code. The code would look something like this:
+
+```
+write_results = input("Would you like to write the results to the election_analysis.txt file?")

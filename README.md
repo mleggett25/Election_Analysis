@@ -200,3 +200,29 @@ print(winning_candidate_summary)
 We find that the winner of the election was Diana DeGette with 272,892 votes (73.8% of the total vote).
 
 ## Election Audit Summary
+I propose that this script be used to analyze future election data. Because most of the code in the script is not hard coded, the script can be run with any election data with little modification. We can modify the script in a couple ways to help it be more useful in other elections. One way to modify the script is to use the glob function which will allow us to open and concatenate multiple data files. This could be useful because each counties election data would come reported in its own data file. Instead of manually combining all of the counties data into one file and allowing for potential human error, we can use the glob function. The code would look something like this:
+
+```
+import glob
+import os
+import pandas as pd
+
+# Path to the file directory
+mycsvdir = 'csvdir'
+
+# Get all the csv files in that directory (assuming they have the extension .csv)
+csvfiles = glob.glob(os.path.join(mycsvdir, 'election*.csv'))
+
+# Loop through the files and read them in with pandas
+dataframes = []  # a list to hold all the individual pandas DataFrames
+for csvfile in csvfiles:
+    df = pd.read_csv(csvfile)
+    dataframes.append(df)
+
+# Concatenate them all together
+result = pd.concat(dataframes, ignore_index=True)
+
+# Print out to a new csv file
+result.to_csv('all.csv')
+```
+Source: https://stackoverflow.com/a/53190147/15171602

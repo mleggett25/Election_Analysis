@@ -233,3 +233,10 @@ Another way to modify the script is to create a dialog box that asks the user if
 
 ```
 write_results = input("Would you like to write the results to the election_analysis.txt file?")
+    if write_results == "Yes":
+        txt_file.write(winning_candidate_summary)
+    elif write_results == "No":
+        Pass
+```
+
+
